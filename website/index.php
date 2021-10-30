@@ -1,7 +1,3 @@
-
-<?php
-ini_set('display_errors', 1);
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,9 +13,7 @@ ini_set('display_errors', 1);
 <body>
     <?php
     
-    function chart(){
-        echo('<div width="50%"><canvas id="myChart"></canvas><script src="chart.js"></script></div>');
-    }
+    require("chartgeneration.php");
     chart();
     ?>
         
