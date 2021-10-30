@@ -12,6 +12,14 @@
 </head>
 
 <body>
+<div class="header"> 
+      <a href="./home.php">Accueil</a>
+      <a href="./settings.php">Paramètres</a>
+      <form action='../backend/logout.php'>
+        <input type='submit' value='deconnexion' />
+      </form>"
+    </div>
+
     <h1>
         Tableau de bord pour la suivi de compte
     </h1>
@@ -23,7 +31,6 @@
     <?php
     require("../backend/database.php");
     database_to_chart();
-    
     ?>
         
 
