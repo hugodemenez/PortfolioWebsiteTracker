@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if ($_SESSION["auth"]!=1){
+        header('Location:../index.php?erreur=1');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,8 +14,6 @@
     <title>PortfolioTracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../styles/home.css">
-    
-
 </head>
 
 <body>
@@ -16,8 +21,8 @@
       <a href="./home.php">Accueil</a>
       <a href="./settings.php">Paramètres</a>
       <form action='../backend/logout.php'>
-        <input type='submit' value='deconnexion' />
-      </form>"
+        <input type='submit' value='deconnexion'/>
+      </form>
     </div>
 
     <h1>

@@ -11,6 +11,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
    if($row["password"]==$password){
       session_start();
       $_SESSION['username'] = $username;
+      $_SESSION['auth'] = 1;
       $_SESSION['password'] = $password;
       header('Location: ../frontend/home.php');
    }
