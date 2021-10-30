@@ -12,9 +12,47 @@
 
 <body>
     <?php
-    
     require("chartgeneration.php");
-    chart("Evolution du portfolio : Coinbase");
+    require("database.php");
+
+
+
+    $database   = cnxDB() ;
+    
+    if ($database == false) 
+        {
+            echo "Erreur de connexion : " .  mysqli_connect_errno()  ;
+            die();
+        }
+                        
+
+    $requete = "select * from portfolio" ;
+
+    $result = mysqli_query($database,$requete);
+
+    if ( $result == FALSE )
+        {
+            echo "Erreur d'exécution de la requete " ;
+            die();
+        }
+
+
+
+    if  ( mysqli_num_rows($result) > 0)
+        {
+            while ($row = mysqli_fetch_assoc($result))
+                {
+                    
+                    chart($row["name"],$row['date'],$row['value']);
+                    
+                }  
+        }
+    else
+        {
+            echo "Il n'y a pas de graphiques à afficher" ;
+        }
+
+    
     ?>
         
 
