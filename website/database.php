@@ -1,6 +1,4 @@
 <?
-
-
 function cnxDB(){
         $connexion = mysqli_connect("localhost", "hugodemenez", "password" , "database") ;
 
@@ -13,6 +11,8 @@ function cnxDB(){
             return $connexion;
         }
     }
+
+
 
 
 ?>

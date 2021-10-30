@@ -15,8 +15,6 @@
     require("chartgeneration.php");
     require("database.php");
 
-
-
     $database   = cnxDB() ;
     
     if ($database == false) 
@@ -27,7 +25,6 @@
                         
 
     $requete = "select * from portfolio" ;
-
     $result = mysqli_query($database,$requete);
 
     if ( $result == FALSE )
@@ -42,8 +39,19 @@
         {
             while ($row = mysqli_fetch_assoc($result))
                 {
+                    $requete2 = "select * from data where portfolioName = '".$row['name']."'" ;
+                    $result2 = mysqli_query($database,$requete2);
+                    $values = array();
+                    $dates =array();
+                    if  ( mysqli_num_rows($result2) > 0){
+                        while ($row2 = mysqli_fetch_assoc($result2)){
+                            $values[] =$row2['value'];
+                            $dates[] =$row2['date'];
+                        }
+                        
+                        chart($row["name"],json_encode($dates),json_encode($values));
+                    }
                     
-                    chart($row["name"],$row['date'],$row['value']);
                     
                 }  
         }

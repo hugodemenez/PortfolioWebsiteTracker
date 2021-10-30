@@ -1,6 +1,6 @@
 <?php
 
-function chart($name,$date,$value){
+function chart($name,$dates,$values){
     $random_color1 =(rand(0, 255));
     $random_color2 =(rand(0, 255));
     $random_color3 =(rand(0, 255));
@@ -11,10 +11,10 @@ function chart($name,$date,$value){
     new Chart('.$name.', {
         type: "line",
         data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul"],
+            labels:'.$dates.',
             datasets: [{
                 label: "Evolution du portfolio : '.$name.'",
-                data: [15, 19, 3, 5, 2, 3],
+                data: '.$values.',
                 backgroundColor: "rgba('.$random_color1.', '.$random_color2.', '.$random_color3.', 1)",
                 borderColor: "rgba('.$random_color1.', '.$random_color2.', '.$random_color3.', 1)",
                 borderWidth: 3
