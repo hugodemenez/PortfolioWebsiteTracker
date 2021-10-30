@@ -18,7 +18,7 @@
                 <button id="login_btn" type="button" class="toggle-btn" onclick="connexion()">Connexion</button>
                 <button id="register_btn" type="button" class="toggle-btn" onclick="inscription()">Inscription</button>
             </div>
-            <form id="connexion" class="input-group" action="view/login_verification.php" method="POST">
+            <form id="connexion" class="input-group" action="/backend/login_verification.php" method="POST">
         
                 <i class="fas fa-user field_group">
                 <input type="text" class="input-field" placeholder="Identifiant" name="username" required>
@@ -38,14 +38,11 @@
             </form>
             
             <form id="inscription" class="input-group" action="view/register_verification.php" method="POST">
-                <i class="fas fa-envelope field_group">
-                    <input type="email" class="input-field" placeholder="email" name="email_register" required>
-                </i>
                 <i class="fas fa-user field_group">
-                    <input type="text" class="input-field" placeholder="Identifiant Aurion" name="username_register" required>
+                    <input type="text" class="input-field" placeholder="Identifiant" name="username_register" required>
                 </i>
                 <i class="fas fa-lock field_group">
-                    <input id="password_register" type="password" class="input-field" placeholder="Mot de passe Aurion" name="password_register" required>
+                    <input id="password_register" type="password" class="input-field" placeholder="Mot de passe" name="password_register" required>
                     <i id="eye_register" class="fas fa-eye" onclick="reveal_password_register()"></i>
                 </i>
                 <button type="submit" class="submit-btn">S'inscrire</button>
