@@ -1,7 +1,6 @@
-import mysql.connector
+import mysql-connector
 
 class database:
-    #On initalise la classe en créant une variable de connexion à la base de données ainsi que l'initialisation du curseur pour effectuer les requetes
     def __init__(self):
         self.database = mysql.connector.connect(
         host="localhost",
