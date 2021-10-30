@@ -14,7 +14,7 @@
     <?php
     
     require("chartgeneration.php");
-    chart();
+    chart("Evolution du portfolio : Coinbase");
     ?>
         
 

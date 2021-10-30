@@ -1,6 +1,6 @@
 <?php
 
-function chart(){
+function chart($name){
     echo('<div width="50%">
     <canvas id="myChart"></canvas>
     <script>
@@ -10,7 +10,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul"],
         datasets: [{
-            label: "Portfolio Evolution",
+            label: "'.$name.'",
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
